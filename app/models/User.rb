@@ -2,10 +2,11 @@
 #
 # Table name: users
 #
-#  id         :bigint           not null, primary key
-#  username   :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  username    :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  username_id :integer          not null
 #
 class User < ApplicationRecord
     has_many :polls,
@@ -13,8 +14,8 @@ class User < ApplicationRecord
     foreign_key: :user_poll_id,
     class_name: :Poll 
 
-    has_name :responses,
+    has_many :responses,
     primary_key: :id,
-    foreign_key: :user_answer_id
+    foreign_key: :user_answer_id,
     class_name: :Response
 end

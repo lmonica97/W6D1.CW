@@ -11,7 +11,7 @@
 class Poll < ApplicationRecord
     belongs_to :user,
     primary_key: :id,
-    foreign_key: :user_poll_id 
+    foreign_key: :user_poll_id, 
     class_name: :User 
 
     has_many :questions,
