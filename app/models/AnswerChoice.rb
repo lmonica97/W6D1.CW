@@ -12,6 +12,8 @@
 #  question_choice_id :integer          not null
 #
 class AnswerChoice < ApplicationRecord
+    validates :choice_a, :choice_b, :choice_c, :choice_d, presense: true
+    
     has_many :responses,
     primary_key: :id,
     foreign_key: :question_id,
