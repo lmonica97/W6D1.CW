@@ -11,5 +11,5 @@
 #  updated_at :datetime         not null
 #
 class AnswerChoice < ApplicationRecord
-
+    
 end

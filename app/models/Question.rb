@@ -9,5 +9,13 @@
 #  updated_at        :datetime         not null
 #
 class Question < ApplicationRecord
+    belongs_to :poll,
+    primary_key: :id,
+    foreign_key: :polls_question_id,
+    class_name: :Poll 
 
+    has_many :responses,
+    primary_key: :id,
+    foreign_key: :question_id,
+    class_name: :Response
 end
